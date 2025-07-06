@@ -1,0 +1,30 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Go
+/backend/bin/
+/backend/pkg/
+*.exe
+*.test
+*.out
+
+# Node/React
+/frontend/node_modules/
+/frontend/build/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+
+# VSCode
+.vscode/
