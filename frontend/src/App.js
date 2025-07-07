@@ -26,7 +26,7 @@ function App() {
         setError("");
         try {
             const res = await fetch(
-                "http://localhost:8080/api/generate-workout",
+                "https://2d0e-49-207-227-12.ngrok-free.app/api/generate-workout",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -80,7 +80,7 @@ function App() {
                             <span style={{ fontWeight: 500 }}>
                                 Primary Fitness Goal:
                             </span>
-                            <input
+                            <select
                                 name="fitness_goal"
                                 value={form.fitness_goal}
                                 onChange={handleChange}
@@ -92,13 +92,21 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select a goal</option>
+                                <option value="weight_loss">Weight Loss</option>
+                                <option value="muscle_gain">Muscle Gain</option>
+                                <option value="improve_cardio">Improve Cardio</option>
+                                <option value="increase_strength">Increase Strength</option>
+                                <option value="improve_flexibility">Improve Flexibility</option>
+                                <option value="other">Other (please specify)</option>
+                            </select>
                         </label>
                         <label>
                             <span style={{ fontWeight: 500 }}>
                                 Experience Level:
                             </span>
-                            <input
+                            <select
                                 name="experience_level"
                                 value={form.experience_level}
                                 onChange={handleChange}
@@ -110,13 +118,18 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select experience level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
                         </label>
                         <label>
                             <span style={{ fontWeight: 500 }}>
                                 Workouts Per Week:
                             </span>
-                            <input
+                            <select
                                 name="workouts_per_week"
                                 value={form.workouts_per_week}
                                 onChange={handleChange}
@@ -128,13 +141,19 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select frequency</option>
+                                <option value="1-2">1-2 times</option>
+                                <option value="3-4">3-4 times</option>
+                                <option value="5-6">5-6 times</option>
+                                <option value="7">7 times</option>
+                            </select>
                         </label>
                         <label>
                             <span style={{ fontWeight: 500 }}>
                                 Time Per Workout:
                             </span>
-                            <input
+                            <select
                                 name="time_per_workout"
                                 value={form.time_per_workout}
                                 onChange={handleChange}
@@ -146,13 +165,19 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select duration</option>
+                                <option value="15">15 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">60 minutes</option>
+                            </select>
                         </label>
                         <label>
                             <span style={{ fontWeight: 500 }}>
                                 Available Equipment:
                             </span>
-                            <input
+                            <select
                                 name="available_equipment"
                                 value={form.available_equipment}
                                 onChange={handleChange}
@@ -164,13 +189,20 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select equipment</option>
+                                <option value="none">None</option>
+                                <option value="dumbbells">Dumbbells</option>
+                                <option value="resistance_bands">Resistance Bands</option>
+                                <option value="treadmill">Treadmill</option>
+                                <option value="full_gym">Full Gym</option>
+                            </select>
                         </label>
                         <label>
                             <span style={{ fontWeight: 500 }}>
                                 Preferred Days:
                             </span>
-                            <input
+                            <select
                                 name="preferred_days"
                                 value={form.preferred_days}
                                 onChange={handleChange}
@@ -182,13 +214,18 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select days</option>
+                                <option value="weekdays">Weekdays</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
                         </label>
                         <label>
                             <span style={{ fontWeight: 500 }}>
                                 Limitations or Injuries:
                             </span>
-                            <input
+                            <select
                                 name="limitations"
                                 value={form.limitations}
                                 onChange={handleChange}
@@ -200,7 +237,14 @@ function App() {
                                     borderRadius: 6,
                                     border: "1px solid #ccc",
                                 }}
-                            />
+                            >
+                                <option value="">Select limitation</option>
+                                <option value="none">None</option>
+                                <option value="back_pain">Back Pain</option>
+                                <option value="knee_pain">Knee Pain</option>
+                                <option value="shoulder_injury">Shoulder Injury</option>
+                                <option value="other">Other (please specify)</option>
+                            </select>
                         </label>
                         <button
                             type="submit"
